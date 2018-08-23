@@ -1,0 +1,67 @@
+<!-- Header -->
+<header id="header">
+  <nav id="nav" class="subview">
+    <div class="top-row">
+      <ul class="left">
+        <li><a ui-sref="news-header.news">All News</a></li>
+        <li><a role="button" ui-sref="resources">Resources</a></li>
+        <li><a role="button" ui-sref="licenses.protocolo">Leave of Absence</a></li>
+        <li><a class="selected">Training</a></li>
+        <li><a role="button" ui-sref="teamMeetings">Team Meetings</a></li>
+      </ul>
+      <ul class="right">
+        <li><a role="button" ui-sref="home">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section id="introduction-licenses"> 
+  <h1>Training</h1>
+  <div>
+      <div class="logos">
+        <img src="./dist/img/Logos-16.png" width="140" height="140" />
+      </div>
+      <div class="content-info">
+        <h5>Brownbags</h5>
+        <p>Broaden your skillset learning from your teammates or share your knowledge through BrownBag Meetings. Sign Up to new BrowbBags, access documentation for closed sessions or request new ones here.</p>
+        <div>
+          <a ui-sref="training.newbrownbag"> Request a BrownBag <img src="./dist/img/arrow_white.png" width="20px" height="20px"/></a>
+          <a ui-sref="training.brownbag"> View <img src="./dist/img/arrow_white.png" width="20px" height="20px" /></a>
+        </div>
+      </div>
+  </div>
+  <div>
+    <div class="logos">
+      <img src="./dist/img/Logos-15.png" width="140" height="140" />
+    </div>
+    <div class="content-info">
+      <h5>Training Calendar</h5>
+      <p>Check already scheduled training sessions and Brown Bags in the teams Calendar.</p>
+      <div>
+        <a ui-sref="training.calendar">
+          View <img src="./dist/img/arrow_white.png" width="20px" height="20px" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div>
+      <div class="logos">
+        <img src="./dist/img/Logos-14.png" width="140" height="140" />
+      </div>
+      <div class="content-info">
+        <h5>DSI Training Platform</h5>
+        <p>Access DSI Self-Paced training courses and certifications through their Education Platform.</p>
+        <div>
+          <a ng-click="vm.goToUrl('https://platform.dsiglobal.com:10113/')">
+            Visit Site <img src="./dist/img/arrow_white.png" width="20px" height="20px" />
+          </a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section id="contentFormPdf">
+    <div ui-view></div>
+    
+</section>

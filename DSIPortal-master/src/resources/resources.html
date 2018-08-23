@@ -1,0 +1,43 @@
+<!-- Header -->
+<header id="header">
+  <nav id="nav" class="subview">
+    <div class="top-row">
+      <ul class="left">
+        <li><a ui-sref="news-header.news">All News</a></li>
+        <li><a class="selected">Resources</a></li>
+        <li><a role="button" ui-sref="licenses.protocolo">Leave of Absence</a></li>
+        <li><a role="button" ui-sref="training.brownbag">Training</a></li>
+        <li><a role="button" ui-sref="teamMeetings">Team Meetings</a></li>
+      </ul>
+      <ul class="right">
+        <li><a role="button" ui-sref="home">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section id="resources-intro">
+    <h1>Resources</h1>
+</section> 
+
+<section id="resources-content">
+    <div class="expand" ng-repeat="resource in vm.resources" id="resource{{resource.id}}">
+        <div class="question-answer" id="qa{{resource.id}}">
+            <h1>{{resource.resourceNm}}</h1>
+            <p>{{resource.description}}</p>
+            <div>
+                <a href="{{resource.link}}" class="download" download>Download <img src="./dist/img/Logos-12.png" width="20" height="20"/></a>
+            </div>
+            <h2>FAQ</h2>
+            <ul>
+            <li class="question" ng-repeat="question in resource.questions" >{{question.q}}
+                <img ng-click="vm.expand(resource.id, question)" ng-show="!question.expanded" class="image" src="./dist/img/arrow-bot.png" width="20px" height="20px" />
+                <img ng-click="vm.expand(resource.id, question)" ng-show="question.expanded" class="image" src="./dist/img/arrow-top.png" width="20px" height="20px" />
+                <ul class="answer" id="question-{{resource.id}}-{{question.id}}">
+                    <li >{{question.answer}}</li>
+                </ul>                
+            </li>
+        </ul>
+        </div>
+    </div>
+</section>

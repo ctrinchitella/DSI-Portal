@@ -1,0 +1,126 @@
+<!-- Header -->
+<header id="header">
+  <nav id="nav">
+    <div class="top-row">
+      <ul class="left">
+        <li><a ui-sref="news-header.news">All News</a></li>
+        <li><a role="button" ui-sref="resources">Resources</a></li>
+        <li><a role="button" ui-sref="licenses.protocolo">Leave of Absence</a></li>
+        <li><a role="button" ui-sref="training.brownbag">Training</a></li>
+        <li><a role="button" ui-sref="teamMeetings">Team Meetings</a></li>
+        
+      </ul>
+      <!--<ul class="right">
+        <li><a role="button" ng-click="vm.scrollTo('contactus')">Contact The Team</a></li>
+      </ul>-->
+    </div> 
+    <div class="bottom-row">
+      <ul class="left">
+        <li><a role="button" ng-click="vm.scrollTo('tools')">Tools</a></li>
+        <li><a role="button" ng-click="vm.scrollTo('news')">News</a></li>
+        <li><a role="button" ng-click="vm.scrollTo('links')">Collaboration</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section id="jumbotron"> 
+  <div class="pill">
+    <a role="button" ui-sref="news-header.news">
+      All News
+      <img src="./dist/img/arrow.png" width="20px" height="20px" />
+    </a>
+  </div>
+  <div class="pill">
+    <a role="button" ui-sref="resources">
+      Resources
+      <img src="./dist/img/arrow.png" width="20px" height="20px" />
+    </a>
+  </div>
+  <div class="pill">
+    <a role="button" ui-sref="teamMeetings">
+      Next Team Meeting
+      <img src="./dist/img/arrow.png" width="20px" height="20px" />
+    </a>
+  </div>
+</section>
+
+<section id="tools">
+  <div ng-click="vm.goToRocket()">
+    <div class="logo">
+      <img src="./dist/img/Logos-01.png" />
+    </div>
+    <h5>MC Rocket</h5>
+    <p>Boost your productivity with MCRocket: The Launcher App for the DSI Mobile Client. MC Rocket allows you to handle your configurations from a single place and seamlessly swap through environments.</p>
+  </div>
+  <div ng-click="vm.goToUrl('http://dsi.grupoassa.com/mepnonprod/')">
+    <div class="logo">
+      <img src="./dist/img/Logos-03.png" />
+    </div>
+    <h5>DSI Lab for gA</h5>
+    <p>Proove the new direct access more easy and fast of DSI Lab for gA to create, practice and schedule your apps.</p>
+  </div>
+</section>
+
+<section id="news">
+  <ul id="carousel" rn-carousel rn-carousel-auto-slide rn-carousel-loop>
+    <li ng-repeat="article in vm.articles" >
+      <img ng-src="{{article.imgSlide}}"/>
+      <div>
+        <div>
+          <h5>{{article.title}}</h5>
+          <p ng-bind-html="article.shortDesc"></p>
+          <div> 
+            <a ng-click="vm.goArticle(article)">More Info <img src="./dist/img/arrow.png" width="20" height="20" /></a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <a ui-sref="news-header.news" role="button">All News &gt;</a>
+</section>
+
+<section id="projects">
+  <div class="scroller">
+    <div class="container">
+      <div class="card" ng-repeat="project in vm.displayProjects">
+        <h5>{{project.title}}</h5>
+        <h6><strong>Assignees:</strong> {{project.assignees}}</h6>
+        <p>{{project.desc}}</p>
+        <div>
+          <span ng-show="project.inProgress">In Progress</span><a href="mailto:AD%26I_DSI_Argentina@grupoassa.com?Subject=Sign%20Me%20Up%20For%20{{project.titleEncoded}}" ng-show="!project.inProgress"><img src="./dist/img/hold.png" width="20" height="20"> Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+  <a ng-click="vm.tbdProjects()"><img src="./dist/img/tick-inside-circle.png" width="40" height="40" />To Do</a>
+  <a ng-click="vm.onGoingProjects()"><img src="./dist/img/progress-arrows.png" width="40" height="40" />On Going</a>
+  <a ng-click="vm.goToUrl('https://docs.google.com/forms/d/e/1FAIpQLSfx0T6nFXfisBM6SlZ0Auxt1AsYqyfAMok75OwUHQJBAzp29A/viewform?usp=sf_link')" ><img src="./dist/img/hold.png" width="40" height="40" />Propose</a>
+  </div>  
+</section>
+
+<section id="links">
+<h1>Collaboration</h1>
+<div>
+    <div ng-repeat="link in vm.links" ng-click="vm.goToUrl(link.Url)">
+      <img ng-src="{{link.Img}}"/>
+      <div class="overlay">
+        <div class="text">{{link.Icon}}</div>
+      </div>
+    </div>
+</div>
+</section>
+
+<!--<section id="contactus">
+  <h1>Contact the Team</h1>
+  <form> 
+    <div><input type="text" placeholder="Email"/></div>
+    <div><input type="text" placeholder="Name"/></div> 
+    <input type="text" placeholder="Subject"/>
+    <textarea placeholder="Text" maxlength="2000"></textarea>
+    
+    <p>Characters Left: {{2000 - document.getElementsByTagName('textarea')[0].value.length}}</p>
+    <button type="button">Submit</button>
+  </form>
+</section>-->

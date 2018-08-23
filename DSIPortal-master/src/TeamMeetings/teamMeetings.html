@@ -1,0 +1,45 @@
+<!-- Header -->
+<header id="header">
+  <nav id="nav" class="subview">
+    <div class="top-row">
+      <ul class="left">
+        <li><a ui-sref="news-header.news">All News</a></li>
+        <li><a role="button" ui-sref="resources">Resources</a></li>
+        <li><a role="button" ui-sref="licenses.protocolo">Leave of Absence</a></li>
+        <li><a role="button" ui-sref="training.brownbag">Training</a></li>
+        <li><a class="selected">Team Meetings</a></li>
+        
+      </ul>
+      <ul class="right">
+        <li><a role="button" ui-sref="home">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section id="nextMeeting">
+    <div>
+        <h1>Next Meeting</h1>
+        <p>A new space to communicate the information about the next team meeting and also see an overview of all the meetings for more ease.</p>
+        <p class="next"> Friday 21 july, 14:00 hs</p>
+    </div>
+    <div>
+      <div>
+      <div class="logos"><img src="./dist/img/Logos-11.png" width="140px" height="140px"/></div>
+      <h5>Appear</h5>
+      <p class="appear">When you have a meeting, you can use Appear. This application that contains scheduled meeting in differents rooms. This access goes directly to the DSI room.</p>
+      </div>
+      <div class="link">
+        <a ng-click="vm.goToUrl('https://appear.in/dsi-team-meeting')"> Go to the meeting <img src="./dist/img/arrow_white.png" width="20px" height="20px" /></a>
+      </div>
+    </div>
+</section> 
+ 
+<section id="blogList">
+    <div ng-repeat="meeting in vm.meetings" id="meeting{{meeting.Id}}">
+        <h1>Meeting {{meeting.Date}}</h1> 
+        <div class="meeting-content" ng-bind-html="meeting.Minutes"></div>
+        <div class="fadeout"></div>
+        <a ng-click="vm.expand('meeting'+meeting.Id)">Meetings Minutes</a>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+<section id="brownBagList">
+  <div ng-repeat="brownbag in vm.brownbags | orderBy: 'active':true">
+    <h1>{{brownbag.title}}</h1><h1 class="date" ng-show="brownbag.active">- Next Session: {{brownbag.date}}</h1>
+    <p><strong>Duration: </strong>{{brownbag.duration}}<br>{{brownbag.description}}</br></p>
+    <div>
+      <a ng-show="!brownbag.active" ng-click="vm.goToUrl(brownbag.resourcesUrl)">View Content <img src="./dist/img/arrow.png" width="20" height="20" /></a>
+      <a ng-show="!brownbag.active" href="mailto:AD%26I_DSI_Operaciones@grupoassa.com?subject=Session%20Request%20{{brownbag.titleEncoded}}">Request a New Session <img src="./dist/img/arrow.png" width="20" height="20" /></a>
+      <a ng-show="brownbag.active" href="mailto:AD%26I_DSI_Operaciones@grupoassa.com?subject=Sign%20Me%20Up%20For%20{{brownbag.titleEncoded}}%20BrownBag">Sign Up <img src="./dist/img/arrow.png" width="20" height="20" /></a>
+    </div>
+  </div>
+</section>

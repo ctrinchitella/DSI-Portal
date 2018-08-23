@@ -1,0 +1,23 @@
+<!-- Header -->
+<header id="header">
+  <nav id="nav" class="subview">
+    <div class="top-row">
+      <ul class="left">
+        <li><a class="selected">All News</a></li>
+        <li><a role="button" ui-sref="resources">Resources</a></li>
+        <li><a role="button" ui-sref="licenses.protocolo">Leave of Absence</a></li>
+        <li><a ui-sref="training.brownbag">Training</a></li>
+        <li><a role="button" ui-sref="teamMeetings">Team Meetings</a></li>
+      </ul>
+      <ul class="right">
+        <li><a role="button" ui-sref="home">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section ng-show="$state.includes('news-header.news')" id="intro-news">
+  <h1>News</h1>
+</section>
+
+<div class="news-container" ui-view></div>

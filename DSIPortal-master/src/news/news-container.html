@@ -1,0 +1,19 @@
+<section id="content-news">
+  <div ng-repeat="article in vm.articles">
+    <div class="content-image"> 
+        <img ng-src="{{article.imgNews}}" width="250" height="250"/>
+    </div>
+    <div class="content-description">
+        <h1>
+            {{article.title}}
+        </h1>
+        <p>
+           {{article.shortDesc}}
+        </p>
+        <div class="link">
+            <a ng-click="vm.openArticle(article)">Read More <img src="./dist/img/arrow.png" width="20px" height="20px" /></a>
+        </div>
+        
+    </div>
+  </div>
+</section>

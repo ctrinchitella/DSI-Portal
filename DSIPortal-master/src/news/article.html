@@ -1,0 +1,19 @@
+<section id="intro-news">
+  <h1>{{vm.news.title}}</h1>
+</section>
+<section id="article-content">
+    <p class="subtitle">{{vm.news.shortDesc}}</p>
+    <div>
+        <div class="mini-description">
+            <p ng-bind-html="vm.news.body1"></p>
+        </div>
+        <div class="image">
+            <img ng-src="{{vm.news.imgArticle}}" width="500" height="300"/>
+            <cite>{{vm.news.cite}}</cite>
+        </div>
+    </div> 
+    <div class="content2">
+        <p ng-bind-html="vm.news.body2"></p>
+    </div>
+</section>
+    

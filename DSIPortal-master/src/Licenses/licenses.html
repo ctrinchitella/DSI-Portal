@@ -1,0 +1,64 @@
+<!-- Header -->
+<header id="header">
+  <nav id="nav" class="subview">
+    <div class="top-row">
+      <ul class="left">
+        <li><a ui-sref="news-header.news">All News</a></li>
+        <li><a role="button" ui-sref="resources">Resources</a></li>
+        <li><a class="selected">Leave of Absence</a></li>
+        <li><a role="button" ui-sref="training.brownbag">Training</a></li>
+        <li><a role="button" ui-sref="teamMeetings">Team Meetings</a></li>
+        
+      </ul>
+      <ul class="right">
+        <li><a role="button" ui-sref="home">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section id="introduction-licenses"> 
+  <h1>Leave of Absence</h1>
+  <div>
+      <div class="logos"> <img src="./dist/img/logos-10.png" width="140px" height="140px" /></div>
+      <div class="content-info">
+        <h5>Work Instruction</h5>
+        <p>Follow the necessary steps to inform the team you are taking time off so you can avoid any complications when the time comes.</p>
+        <div>
+          <a ui-sref="licenses.protocolo"> Go <img src="./dist/img/arrow_white.png" width="20px" height="20px" /></a>
+        </div>
+      </div>
+  </div>
+  <div>
+    <div class="logos"><img src="./dist/img/logos-08.png" width="140px" height="140px" /></div>
+    <div class="content-info">
+      <h5>Absence <Report></Report></h5>
+      <p>Complete the form as early as possible when taking time off so we can produce more accurate billings.</p>
+      <div>
+        <a ui-sref="licenses.formulario">
+          Go <img src="./dist/img/arrow_white.png" width="20px" height="20px" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div>
+      <div class="logos"> <img src="./dist/img/logos-09.png" width="140px" height="140px" /></div>
+      <div class="content-info">
+        <h5>Vacations Timesheet</h5>
+        <p>View when others are taking some time off or post your vacations for approval. Follow the Work Instruction guidelines to avoid overlapping with your teammates.</p>
+        <div>
+          <a ng-click="vm.goToUrl('https://docs.google.com/spreadsheets/d/1ULmBRNFnTLdA_ASrTkFjqmeTnXoKLpcPvFD107VDZR0/edit?usp=drive_web')">
+            Post Yours <img src="./dist/img/arrow_white.png" width="20px" height="20px" />
+          </a>
+          <a ui-sref="licenses.planilla">
+            View <img src="./dist/img/arrow_white.png" width="20px" height="20px" />
+          </a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section id="contentFormPdf">
+    <div ui-view></div>
+    
+</section>
